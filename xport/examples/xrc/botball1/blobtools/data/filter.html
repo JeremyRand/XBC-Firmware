@@ -1,0 +1,68 @@
+<script>
+function add(field, delta) {
+  field.form.v.value= parseInt(field.form.v.value)+delta;
+  update_images();
+}
+function isnum(val) {
+  return val.toString().search("^[-0-9]") != -1;
+}
+function getargs(startidx) {
+  var ret='';
+  var n=0;
+  for (var i= 0; i< args.length; i++) {
+    for (var j= 0; j< args[i].length; j++) {
+      if (i >= startidx) {
+        var elt;
+        if (argnames[i][j]) {
+          elt=argnames[i][j] + '=' + document.forms[n].v.value;
+        }
+        else {
+          elt=document.forms[n].v.value;
+        }
+        ret += (j ? "," : ";") + elt;
+      }
+      n++;
+    }
+  }
+  return ret;
+}
+function update_images() {
+  for (var i= 0; i < args[0].length; i++) {
+    document.images[i*2+1].src= args[0][i] + getargs(1);
+  }
+}
+function update_url() {
+  location.replace("filter.html" + getargs(0));
+}
+for (var i= 0; i< args.length; i++) {
+  for (var j= 0; j< args[i].length; j++) {
+    document.write('<form onsubmit="return false">\n');
+    if (i&&j) {
+      document.writeln('<input type="button" value="<<" onclick="add(this, -10);">');
+      document.writeln('<input type="button" value="<"  onclick="add(this,  -1);">');
+      document.writeln('<input name="v" type="text" size=3 onchange="update_images();">');
+      document.writeln('<input type="button" value=">"  onclick="add(this,   1);">');
+      document.writeln('<input type="button" value=">>" onclick="add(this,  10);">');
+      if (argnames[i][j]) {
+        document.write(' = ' + argnames[i][j]);
+      }
+    } else {
+      document.writeln('<input name="v" type="hidden">');
+      if (i) document.writeln(args[i][j]+":<br>");
+    }
+    document.writeln('</form>');
+  }
+}
+var n= 0;
+for (var i= 0; i< args.length; i++) {
+  for (var j= 0; j< args[i].length; j++) {
+    document.forms[n++].v.value=args[i][j];
+  }
+}
+for (var i= 0; i< args[0].length; i++) {
+  document.writeln("<img src='" + args[0][i] + "'>&nbsp;");
+  imagename= args[0][i] + getargs(1);
+  document.writeln("<img src='" + imagename + "'> ");
+}
+</script>
+<form><input type="button" value="Update URL" onclick="update_url();"></form>

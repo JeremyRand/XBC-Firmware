@@ -1,0 +1,61 @@
+<h3>Using early XRC images from Rich:</h3>
+
+
+<a href="/filter.html;xrc_colorref.ppm,xrc20.ppm,xrc21.ppm,xrc22.ppm,xrc23.ppm,xrc24.ppm,xrc25.ppm,xrc26.ppm,xrc30.ppm,xrc31.ppm,xrc32.ppm,xrc33.ppm,xrc34.ppm,xrc35.ppm,xrc36.ppm,xrc37.ppm,xrc38.ppm,xrc39.ppm,xrc40.ppm,xrc41.ppm,xrc42.ppm,xrc43.ppm,xrc44.ppm,xrc45.ppm,xrc46.ppm,xrc47.ppm,xrc48.ppm,xrc49.ppm,xrc50.ppm,xrc51.ppm,xrc52.ppm,xrc53.ppm,xrc54.ppm,xrc55.ppm,xrc56.ppm,xrc57.ppm;threshold_hsv_cube_xrc3,hmin_0=0,hmax_0=26,smin_0=190,smax_0=255,vmin_0=77,vmax_0=255,hmin_1=0,hmax_1=26,smin_1=190,smax_1=255,vmin_1=77,vmax_1=255,hmin_2=0,hmax_2=26,smin_2=190,smax_2=255,vmin_2=77,vmax_2=255">
+Detection using XRC-specific LUT code on prototype botball table
+</a><br>
+
+<a href="/filter.html;xrc_colorref.ppm,xrc1.ppm,xrc2.ppm,xrc3.ppm,xrc4.ppm,xrc5.ppm,xrc6.ppm,xrc7.ppm,xrc8.ppm,xrc9.ppm,xrc10.ppm,xrc11.ppm,xrc13.ppm,xrca.ppm,xrcb.ppm,xrcc.ppm;threshold_hsv_cube_xrc,hmin=0,hmax=26,smin=190,smax=255,vmin=77,vmax=255;blobify,minarea=100,showseg=0,showbars=1,showell=1">
+Detection using XRC-specific LUT code!
+</a><br>
+
+<a href="/filter.html;xrc1.ppm,xrc2.ppm,xrc3.ppm,xrc4.ppm,xrc5.ppm,xrc6.ppm,xrc7.ppm,xrc8.ppm,xrc9.ppm,xrc10.ppm,xrc11.ppm,xrc13.ppm,xrca.ppm,xrcb.ppm,xrcc.ppm;threshold_hsv_cube_rb_lookup,hmin=0,hmax=26,smin=190,smax=255,vmin=77,vmax=255,rbits=5,gbits=5,bbits=5">
+Detection using threshold HSV cube using RB lookup table after truncating image to fewer than 8 bits per R,G,B
+</a><br>
+
+<a href="/filter_omit_originals.html;xrc1.ppm,xrc2.ppm,xrc3.ppm,xrc4.ppm,xrc5.ppm,xrc6.ppm,xrc7.ppm,xrc8.ppm,xrc9.ppm,xrc10.ppm,xrc11.ppm,xrc13.ppm,xrca.ppm,xrcb.ppm,xrcc.ppm;threshold_hsv_cube_rb_lookup,hmin=0,hmax=360,smin=0,smax=255,vmin=0,vmax=255,rbits=5,gbits=5,bbits=5">Open</a><br>
+
+<a href="/filter.html;oneblob.ppm,three_blobs.ppm,lumpyblob.ppm,blob_arch.ppm,blob_arch_separated.ppm,nested_blob.ppm;blobify,showseg=1,showbars=1,showell=1">
+Synthetic blob tests
+</a><br>
+
+<a href="/filter.html;xrc1.ppm;threshold_hsv_cube_rb_lookup,hmin=0,hmax=26,smin=190,smax=255,vmin=77,vmax=255,rbits=5,gbits=5,bbits=5;blobify,minarea=100,showseg=1,showbars=1,showell=1">
+Blobs of first image (thresholded and truncated as above)
+</a><br>
+
+<a href="/filter.html;xrc1.ppm,xrc2.ppm,xrc3.ppm,xrc4.ppm,xrc5.ppm,xrc6.ppm,xrc7.ppm,xrc8.ppm,xrc9.ppm,xrc10.ppm,xrc11.ppm,xrc13.ppm,xrca.ppm,xrcb.ppm,xrcc.ppm;threshold_hsv_cube_rb_lookup,hmin=0,hmax=26,smin=190,smax=255,vmin=77,vmax=255,rbits=5,gbits=5,bbits=5;blobify,minarea=100,showseg=1,showbars=1,showell=1">
+Blobs of all images (thresholded and truncated as above)
+</a><br>
+
+<h3>Using subsampled images from Canon S500:</h3>
+
+<a href="/filter.html;IMG_0006.ppm,IMG_0007.ppm,IMG_0012.ppm;threshold_rgb_cube,rmin=33,rmax=255,gmin=10,gmax=125,bmin=0,bmax=75">
+Detection using threshold RGB cube
+</a><br>
+
+<a href="/filter.html;IMG_0006.ppm,IMG_0007.ppm,IMG_0012.ppm;threshold_hsv_cube,hmin=4,hmax=33,smin=140,smax=255,vmin=40,vmax=255">
+Detection using threshold HSV cube
+</a><br>
+
+<a href="/filter.html;IMG_0006.ppm,IMG_0007.ppm,IMG_0012.ppm;segment_hsv,max_delta_h=4,max_delta_s=6,max_delta_v=16,min_s=178,min_abs_s=115,min_v=133">
+Segmentation based on local changes in HSV
+</a><br>
+<br>
+
+<a href="/filter.html;IMG_0006.ppm,IMG_0007.ppm,IMG_0012.ppm;truncate_rgb,rbits=5,gbits=5,bbits=5">
+Truncating image from 8 bits per R,G,B to fewer
+</a><br>
+
+<a href="/filter.html;IMG_0006.ppm,IMG_0007.ppm,IMG_0012.ppm;truncate_rgb,rbits=5,gbits=5,bbits=5;threshold_rgb_cube,rmin=33,rmax=255,gmin=10,gmax=125,bmin=0,bmax=75">
+Detection using threshold RGB cube after truncating image to fewer than 8 bits per R,G,B
+</a><br>
+
+<a href="/filter.html;IMG_0006.ppm,IMG_0007.ppm,IMG_0012.ppm;truncate_rgb,rbits=5,gbits=5,bbits=5;threshold_hsv_cube,hmin=4,hmax=33,smin=140,smax=255,vmin=40,vmax=255">
+Detection using threshold HSV cube after truncating image to fewer than 8 bits per R,G,B
+</a><br>
+
+<a href="/filter.html;IMG_0006.ppm,IMG_0007.ppm,IMG_0012.ppm;threshold_hsv_cube_rb_lookup,hmin=4,hmax=33,smin=140,smax=255,vmin=40,vmax=255,rbits=5,gbits=5,bbits=5">
+Detection using threshold HSV cube using RB lookup table after truncating image to fewer than 8 bits per R,G,B
+</a><br>
+
+

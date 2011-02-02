@@ -1,0 +1,8 @@
+cdl_component CYG_HAL_STARTUP {
+    user_value ROM
+};
+
+cdl_option CYGDBG_HAL_DEBUG_LCD_OUTPUT {
+    user_value 0
+};
+

@@ -1,0 +1,4 @@
+cd src/nonpcode
+make clean > /dev/null 2>&1
+cd ../..
+./cont making

@@ -1,0 +1,3 @@
+nano -w makefile.library \
+&& make clean \
+&& make

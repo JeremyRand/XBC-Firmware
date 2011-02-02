@@ -1,0 +1,5 @@
+cdl_component CYG_HAL_STARTUP {
+    user_value ROM
+};
+
+

@@ -1,0 +1,30 @@
+#include "CBluetoothDevice.h"
+#include "CInterruptContSingleton.h"
+
+CBluetoothDevice::CBluetoothDevice() : CBluetoothQueue( CInterruptContSingleton::InstancePtr())
+{
+
+}
+
+CBluetoothDevice::~CBluetoothDevice()
+{
+
+}
+
+void CBluetoothDevice::Connect(int msTimeout)
+{
+	if(SlaveConnect() >= 0) m_isConnected = true;
+}
+
+int CBluetoothDevice::Read(char *buf, unsigned short len, int timeout)
+{
+	return ReadData(buf, len, 10);
+}
+
+int CBluetoothDevice::Write(const char *outData, unsigned short len, int timeout)
+{
+	return WriteData(outData, len);
+}
+
+
+

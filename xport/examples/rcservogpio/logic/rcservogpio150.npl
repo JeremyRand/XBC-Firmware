@@ -1,0 +1,28 @@
+JDF G
+// Created by Project Navigator ver 1.0
+PROJECT rcservogpio
+DESIGN rcservogpio150
+DEVFAM spartan2
+DEVFAMTIME 0
+DEVICE xc2s150
+DEVICETIME 1063991434
+DEVPKG pq208
+DEVPKGTIME 1055443764
+DEVSPEED -5
+DEVSPEEDTIME 1055443764
+DEVTOPLEVELMODULETYPE HDL
+TOPLEVELMODULETYPETIME 0
+DEVSYNTHESISTOOL XST (VHDL/Verilog)
+SYNTHESISTOOLTIME 0
+DEVSIMULATOR Other
+SIMULATORTIME 0
+DEVGENERATEDSIMULATIONMODEL Verilog
+GENERATEDSIMULATIONMODELTIME 0
+SOURCE rcservogpio.v
+DEPASSOC RCServoGpio ..\..\..\logic\src\xport.ucf
+[Normal]
+p_xstVeriIncludeDir=xstvlg, spartan2, Schematic.t_synthesize, 1055447121, ../../../logic/src
+xilxNgdbldMacro=xstvlg, spartan2, Implementation.t_ngdbuild, 1055447358, ../../../logic/lib
+xilxNgdbld_AUL=xstvlg, spartan2, Implementation.t_ngdbuild, 1055447358, True
+[STRATEGY-LIST]
+Normal=True

@@ -1,0 +1,31 @@
+JDF G
+// Created by Project Navigator ver 1.0
+PROJECT sdram
+DESIGN sdram150
+DEVFAM spartan2
+DEVFAMTIME 0
+DEVICE xc2s150
+DEVICETIME 1063992604
+DEVPKG pq208
+DEVPKGTIME 0
+DEVSPEED -5
+DEVSPEEDTIME 0
+DEVTOPLEVELMODULETYPE HDL
+TOPLEVELMODULETYPETIME 0
+DEVSYNTHESISTOOL XST (VHDL/Verilog)
+SYNTHESISTOOLTIME 0
+DEVSIMULATOR Other
+SIMULATORTIME 0
+DEVGENERATEDSIMULATIONMODEL Verilog
+GENERATEDSIMULATIONMODELTIME 0
+SOURCE sdram.v
+DEPASSOC Sdram ..\..\..\logic\src\xportfast.ucf
+[Normal]
+p_xstVeriIncludeDir=xstvlg, spartan2, Schematic.t_synthesize, 1051066445, ..\..\..\logic\src
+xilxMapCoverMode=xstvlg, spartan2, Implementation.t_placeAndRouteDes, 1067951323, Speed
+xilxNgdbldMacro=xstvlg, spartan2, Implementation.t_placeAndRouteDes, 1051066495, ..\..\..\logic\lib
+xilxNgdbld_AUL=xstvlg, spartan2, Implementation.t_placeAndRouteDes, 1051066495, True
+xilxPAReffortLevel=xstvlg, spartan2, Implementation.t_placeAndRouteDes, 1067951323, Medium
+_SynthOptEffort=xstvlg, spartan2, Schematic.t_synthesize, 1067951289, High
+[STRATEGY-LIST]
+Normal=True

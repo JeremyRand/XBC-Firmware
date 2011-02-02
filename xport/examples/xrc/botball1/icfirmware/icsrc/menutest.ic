@@ -1,0 +1,45 @@
+// -*- c -*-
+#use "gbamenu.ic"
+
+#define TESTNUM 4
+
+void main()
+{
+    char a[TESTNUM][16]={"Int 10", "Int 1000", "Float 1", "Float 1000"};
+    int sel=0;
+    
+    while(1) {
+        sel = select_string(a, sel);
+        if(sel==-1) {
+            printf("Exit\n");
+            break;
+        }
+        else if(sel == 0) {
+              int val = select_int_value("Val", 0, 10, 5);
+              printf("Selected Val=%d\n", val);
+          }
+          else if(sel == 1) {
+                int val = select_int_value("Val", 0, 1000, 500);
+                printf("Selected Val=%d\n", val);
+            }
+            else if(sel == 2) {
+                  float val = select_float_value("Val", 0.0, 1.0, 0.1, 0.5);
+                  printf("Selected Val=%f\n", val);
+              }
+              else if(sel == 3) {
+                    float val = select_float_value("Val", 0.0, 1000.0, 0.1, 500.0);
+                    printf("Selected Val=%f\n", val);
+                }
+                else {
+                    printf("Selected %s (%d)\n", a[sel], sel);
+                }
+        sleep(1.0);
+    }
+}
+
+// For emacs to interpret formatting uniformly despite dotfile differences:
+//   Local variables:
+//    comment-column: 40
+//    c-indent-level: 4
+//    c-basic-offset: 4
+//   End:

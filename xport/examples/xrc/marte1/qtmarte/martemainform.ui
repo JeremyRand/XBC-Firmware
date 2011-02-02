@@ -1,0 +1,53 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>MarteMainForm</class>
+<widget class="QMainWindow">
+    <property name="name">
+        <cstring>MarteMainForm</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>957</width>
+            <height>572</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>MARTE Controller</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QTabWidget" row="0" column="0">
+            <property name="name">
+                <cstring>MarteTabWidget</cstring>
+            </property>
+            <widget class="QWidget">
+                <property name="name">
+                    <cstring>tab</cstring>
+                </property>
+                <attribute name="title">
+                    <string>Marte Control 1</string>
+                </attribute>
+            </widget>
+        </widget>
+    </grid>
+</widget>
+<toolbars>
+</toolbars>
+<includes>
+    <include location="local" impldecl="in declaration">MarteControl.h</include>
+    <include location="local" impldecl="in implementation">martemainform.ui.h</include>
+</includes>
+<slots>
+    <slot>addNewControl()</slot>
+    <slot>removeCurrentControl()</slot>
+</slots>
+<functions>
+    <function access="private" specifier="non virtual">init()</function>
+    <function access="private" specifier="non virtual">destroy()</function>
+</functions>
+<pixmapinproject/>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

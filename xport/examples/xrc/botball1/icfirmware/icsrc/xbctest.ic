@@ -1,0 +1,166 @@
+// -*- c -*-
+#use "gbamenu.ic"
+#use "xbccamlib.ic"
+
+void main()
+{
+    char a[3][16]={"Motors", "Servos", "Vision"};
+    int sel=0;
+    
+    while(1) {
+        sel = select_string(a, sel);
+        if(sel==-1) {
+            printf("Exit\n");
+            break;
+        }
+        else if(sel == 0) testmotors();
+          else if(sel == 1) testservo();
+            else if(sel == 2) testvision();
+    }
+}
+
+void
+testmotors(void)
+{
+    printf("Motor test, Hold B to end\n");
+    while (!b_button()) {
+        int i;
+        for (i= 0; (!b_button() && (i< 4)); i++) {
+            fd(i); msleep(250L);
+            bk(i); msleep(250L);
+            off(i);
+        }
+    }
+    beep();
+}
+
+void 
+testservo(void)
+{
+    int i, s;
+    int x, y;
+    
+    while(a_button());
+    printf("Attach Servos, Press A\n");
+    while(!a_button());
+    
+    printf("Press B to end\n Servo=");
+    display_get_xy(&x, &y);
+    
+    enable_servos();
+    while(!b_button()) {
+        for (i=0;(!b_button() && i<255);i+=5) {
+            display_set_xy(x, y);
+            printf("    ");
+            display_set_xy(x, y);
+            printf("%d", i);
+            
+            for(s=0; s<4; s++) {
+                set_servo_position(s, i);
+            }
+            msleep(40L);
+        }
+    }
+    disable_servos();
+    beep();
+}
+
+void print_int_at(int x, int y, int val)
+{
+    display_set_xy(x, y);
+    printf("    ");
+    display_set_xy(x, y);
+    printf("%d", val);
+}
+void print_long_at(int x, int y, long val)
+{
+    display_set_xy(x, y);
+    printf("    ");
+    display_set_xy(x, y);
+    printf("%l", val);
+}
+void clear_at(int x, int y)
+{
+    display_set_xy(x, y);
+    printf("    ");
+}
+
+#define NUM_COL 12
+
+void 
+testvision(void)
+{
+    int ch=0, n;
+    long fnum;
+    int p_bstate, bstate;
+    
+    display_clear();
+    printf("Vision Test\n");
+    printf("  Channel: \n");
+    printf("  Frame:   \n");
+    printf("  Count:   \n\n");
+    
+    printf("Largest Blob Stats\n");
+    printf("  Area:    \n");
+    printf("  Conf:    \n\n");
+    
+    printf("  X:       \n");
+    printf("  Y:       \n\n");
+    
+    printf("A: Show blobs, Down: Exit\n");
+    printf("Left/Right: Change channel");
+    
+    /* Initialize the button state */
+    p_bstate = bstate = button_state();
+    
+    while(!down_button()) {
+        // Check for buttons
+        p_bstate = bstate;
+        bstate = button_state();
+        if(button_hit(LEFT_BTN, p_bstate, bstate) && ch > 0) {
+            ch--;
+        }
+        else if(button_hit(RIGHT_BTN, p_bstate, bstate) && ch < 2) {
+              ch++;
+          }
+          else if(button_hit(A_BTN, p_bstate, bstate)) {
+                track_show_display(1, 1, 1 << ch);
+            }
+            
+            track_update();
+        fnum = track_get_frame();
+        n=track_count(ch);
+        
+        // Print channel, frame, count
+        print_int_at(NUM_COL, 1, ch);
+        print_long_at(NUM_COL, 2, fnum);
+        print_int_at(NUM_COL, 3, n);
+        
+        if(n>0) {
+            // There's at least one blob, show stats
+            print_int_at(NUM_COL, 6, track_size(ch, 0));
+            print_int_at(NUM_COL, 7, track_confidence(ch, 0));
+            print_int_at(NUM_COL, 9, track_x(ch, 0));
+            print_int_at(NUM_COL, 10, track_y(ch, 0));
+        }
+        else {
+            // No blobs, just clear out fields
+            clear_at(NUM_COL, 6);
+            clear_at(NUM_COL, 7);
+            clear_at(NUM_COL, 9);
+            clear_at(NUM_COL, 10);
+        }
+        // Put cursor at bottom so everything gets copied 
+        // if the display context changes
+        display_set_xy(0, 13);       
+        
+    }
+    beep();
+}
+
+// For emacs to interpret formatting uniformly despite dotfile differences:
+//   Local variables:
+//    comment-column: 40
+//    c-indent-level: 4
+//    c-basic-offset: 4
+//   End:

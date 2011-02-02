@@ -1,0 +1,35 @@
+void setpixel(int x, int y, int color)
+{
+    if(color > 32767)
+      {
+        printf("Color must be a 15-bit value: %d\n",color);
+        return;
+    }else if(x>160 || y>240){
+        printf("Screen is only 160x240 pixels");
+        return;
+    }else{
+        callml(3500,x,y,color);
+    }
+}
+int getpixel(int x,int y)
+{
+    if(x>160 || y>240)
+      {
+        printf("Screen is only 160x240 pixels");
+        return 0;
+    }
+    return callml(2500,x,y);
+}
+
+void xviewon()
+{
+    callml(1500,0);
+}
+void xviewoff()
+{
+    callml(1501,0);
+}
+void blankscreen(int color)
+{
+    callml(1502,color);
+}

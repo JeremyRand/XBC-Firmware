@@ -1,0 +1,222 @@
+#  BEGIN LICENSE BLOCK
+# 
+#  Version: MPL 1.1
+# 
+#  The contents of this file are subject to the Mozilla Public License Version
+#  1.1 (the "License"); you may not use this file except in compliance with
+#  the License. You may obtain a copy of the License at
+#  http://www.mozilla.org/MPL/
+# 
+#  Software distributed under the License is distributed on an "AS IS" basis,
+#  WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+#  for the specific language governing rights and limitations under the
+#  License.
+# 
+#  The Original Code is The Xport Logic Library.
+# 
+#  The Initial Developer of the Original Code is Charmed Labs LLC.
+#  Portions created by the Initial Developer are Copyright (C) 2003
+#  the Initial Developer. All Rights Reserved.
+# 
+#  Contributor(s): Rich LeGrand (rich@charmedlabs.com)
+# 
+#  END LICENSE BLOCK 
+
+NET CartData<0> LOC = P165;
+NET CartData<1> LOC = P166;
+NET CartData<2> LOC = P167;
+NET CartData<3> LOC = P168;
+NET CartData<4> LOC = P172;
+NET CartData<5> LOC = P173;
+NET CartData<6> LOC = P174;
+NET CartData<7> LOC = P175;
+NET CartData<8> LOC = P176;
+NET CartData<9> LOC = P178;
+NET CartData<10> LOC = P179;
+NET CartData<11> LOC = P180;
+NET CartData<12> LOC = P181;
+NET CartData<13> LOC = P187;
+NET CartData<14> LOC = P188;
+NET CartData<15> LOC = P189;
+NET CartAddr<0> LOC = P191;
+NET CartAddr<1> LOC = P192;
+NET CartAddr<2> LOC = P193;
+NET CartAddr<3> LOC = P194;
+NET CartAddr<4> LOC = P195;
+NET CartAddr<5> LOC = P199;
+NET CartAddr<6> LOC = P200;
+NET CartAddr<7> LOC = P201;
+NET CartCs LOC = P164;
+NET CartRd LOC = P163;
+NET CartWr LOC = P162;
+NET CartIReq LOC = P203;
+NET FAddr<0> LOC = P150;
+NET FAddr<1> LOC = P149;
+NET FAddr<2> LOC = P148;
+NET FAddr<3> LOC = P147;
+NET FAddr<4> LOC = P141;
+NET FAddr<5> LOC = P140;
+NET FAddr<6> LOC = P139;
+NET FAddr<7> LOC = P138;
+NET FAddr<8> LOC = P136;
+NET FAddr<9> LOC = P134;
+NET FAddr<10> LOC = P133;
+NET FAddr<11> LOC = P129;
+NET FAddr<12> LOC = P127;
+NET FAddr<13> LOC = P125;
+NET FAddr<14> LOC = P123;
+NET FAddr<15> LOC = P122;
+NET FAddr<16> LOC = P121;
+NET FAddr<17> LOC = P120;
+NET FAddr<18> LOC = P114;
+NET FAddr<19> LOC = P113;
+NET FAddr<20> LOC = P112;
+NET FData<0> LOC = P153;
+NET FData<1> LOC = P146;
+NET FData<2> LOC = P142;
+NET FData<3> LOC = P135;
+NET FData<4> LOC = P126;
+NET FData<5> LOC = P119;
+NET FData<6> LOC = P115;
+NET FData<7> LOC = P108;
+NET FOe LOC = P152;
+NET FCe LOC = P132;
+NET FWe LOC = P151;
+    
+NET CPData<0> LOC = P109;
+NET CPData<1> LOC = P102;
+NET CPData<2> LOC = P101;
+NET CPData<3> LOC = P100;
+NET CPDir LOC = P110;
+NET CPStrobe LOC = P111;
+NET CPReset LOC = P99;
+NET CPReady LOC = P98;
+
+NET GreenLED LOC = P204;
+NET RedLED LOC = P205;
+NET Clk LOC = P185;
+NET Clk PERIOD = 15 ns;
+NET Phi LOC = P182;
+
+NET PA<0> LOC = P20;
+NET PA<1> LOC = P21;
+NET PA<2> LOC = P22;
+NET PA<3> LOC = P23;
+NET PA<4> LOC = P24;
+NET PA<5> LOC = P27;
+NET PA<6> LOC = P29;
+NET PA<7> LOC = P30;
+NET PA<8> LOC = P31;
+NET PA<9> LOC = P33;
+NET PA<10> LOC = P34;
+NET PA<11> LOC = P35;
+NET PA<12> LOC = P36;
+NET PA<13> LOC = P37;
+NET PA<14> LOC = P41;
+NET PA<15> LOC = P42;
+NET PA<16> LOC = P43;
+NET PA<17> LOC = P206;
+NET PA<18> LOC = P18;
+NET PA<19> LOC = P17;
+NET PA<20> LOC = P16;
+NET PA<21> LOC = P15;
+NET PA<22> LOC = P14;
+NET PA<23> LOC = P10;
+NET PA<24> LOC = P9;
+NET PA<25> LOC = P8;
+NET PA<26> LOC = P7;
+NET PA<27> LOC = P6;
+NET PA<28> LOC = P5;
+NET PA<29> LOC = P4;
+NET PA<30> LOC = P3;
+NET ClkInA LOC = P77;
+                 
+NET PB<0> LOC = P97;
+NET PB<1> LOC = P96;
+NET PB<2> LOC = P95;
+NET PB<3> LOC = P94;
+NET PB<4> LOC = P90;
+NET PB<5> LOC = P89;
+NET PB<6> LOC = P88;
+NET PB<7> LOC = P87;
+NET PB<8> LOC = P86;
+NET PB<9> LOC = P84;
+NET PB<10> LOC = P83;
+NET PB<11> LOC = P82;
+NET PB<12> LOC = P81;
+NET PB<13> LOC = P75;
+NET PB<14> LOC = P74;
+NET PB<15> LOC = P73;
+NET PB<16> LOC = P71;
+NET PB<17> LOC = P70;
+NET PB<18> LOC = P69;
+NET PB<19> LOC = P68;
+NET PB<20> LOC = P67;
+NET PB<21> LOC = P63;
+NET PB<22> LOC = P62;
+NET PB<23> LOC = P61;
+NET PB<24> LOC = P60;
+NET PB<25> LOC = P59;
+NET PB<26> LOC = P58;
+NET PB<27> LOC = P57;
+NET PB<28> LOC = P49;
+NET PB<29> LOC = P48;
+NET PB<30> LOC = P47;
+NET ClkInB LOC = P80;      
+                 
+NET RData<0> LOC = P161;   
+NET RData<1> LOC = P160;   
+NET RData<2> LOC = P107;   
+NET RData<3> LOC = P154;   
+NET RData<4> LOC = P70;   
+NET RData<5> LOC = P96;   
+NET RData<6> LOC = P48;   
+NET RData<7> LOC = P57;   
+NET RData<8> LOC = P67;   
+NET RData<9> LOC = P62;   
+NET RData<10> LOC = P60;   
+NET RData<11> LOC = P58;   
+NET RData<12> LOC = P49;   
+NET RData<13> LOC = P47;   
+NET RData<14> LOC = P46;   
+NET RData<15> LOC = P44;   
+NET RAddr<0> LOC = P84;   
+NET RAddr<1> LOC = P87;   
+NET RAddr<2> LOC = P89;   
+NET RAddr<3> LOC = P94;   
+NET RAddr<4> LOC = P95;   
+NET RAddr<5> LOC = P90;   
+NET RAddr<6> LOC = P88;   
+NET RAddr<7> LOC = P86;   
+NET RAddr<8> LOC = P83;   
+NET RAddr<9> LOC = P81;   
+NET RAddr<10> LOC = P82;   
+NET RAddr<11> LOC = P74;   
+NET RBs<0> LOC = P73;   
+NET RBs<1> LOC = P75;   
+NET RRas LOC = P68;   
+NET RCas LOC = P63;   
+NET RCs LOC = P45;   
+NET RWe LOC = P61;   
+NET RLdqm LOC = P59;   
+NET RUdqm LOC = P69;   
+NET RCke LOC = P71;  
+
+NET RData* FAST;   
+NET RAddr* FAST;   
+NET RBs* FAST;   
+NET RRas FAST;   
+NET RCas FAST;   
+NET RCs FAST;   
+NET RWe FAST;   
+NET RLdqm FAST;   
+NET RUdqm FAST;   
+NET RCke FAST;  
+
+NET CartData* FAST;
+
+NET FOe FAST;
+NET FCe FAST;
+NET FWe FAST;
+
+NET FAddr* FAST;

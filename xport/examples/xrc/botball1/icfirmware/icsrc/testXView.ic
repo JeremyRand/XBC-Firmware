@@ -1,0 +1,68 @@
+#use "icxview.ic"
+
+void main()
+{
+    xviewon();
+    callml(1503,0);
+    xviewoff();
+}
+/*    int cx,cy;
+    int btnstate;
+    int color = 31;
+    cx=80;cy=120;
+    xviewon();//WORKS
+    beep();
+    draw_palette();
+    while(1)
+      {
+        if(!b_button() && up_button())
+          cy-=2;
+        if(!b_button() && down_button())
+          cy+=2;
+        if(!b_button() && right_button())
+          cx+=2;
+        if(!b_button() && left_button())
+          cx-=2;
+        
+        if(b_button() && up_button())
+          cy--;
+        if(b_button() && down_button())
+          cy++;
+        if(b_button() && right_button())
+          cx++;
+        if(b_button() && left_button())
+          cx--;
+        
+        if(start_button())
+          break;
+        drawcursor(cx,cy,color);
+    }
+    //printf("%x\n",color);
+    //    printf("%x\n",callml(2500,21,21));
+    //    printf("%x\n",color>>8);
+    //    sleep(1.0);
+    //    callml(1502,color);//WORKS
+    while(!a_button());
+    xviewoff();//WORKS
+}
+
+void drawcursor(int x, int y, int color)
+{
+    int xp,yp;
+    for(xp=-2;xp<12;xp++)
+      {
+        for(yp=-2;yp<12;yp++)
+          {
+            if(xp<0 || yp<0 || xp>9 || yp>9)
+              setpixel(x+xp,y+yp,0x7FFF);
+            else
+              setpixel(x+xp,y+yp,color);
+        }
+    }
+}
+
+void draw_palette()
+{
+    //nothing for now....
+}
+*/

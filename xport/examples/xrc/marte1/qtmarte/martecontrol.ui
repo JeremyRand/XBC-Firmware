@@ -1,0 +1,511 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>MarteControl</class>
+<widget class="QWidget">
+    <property name="name">
+        <cstring>MarteControl</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>962</width>
+            <height>504</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Form1</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QLayoutWidget" row="0" column="0">
+            <property name="name">
+                <cstring>layout5</cstring>
+            </property>
+            <hbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QLabel">
+                    <property name="name">
+                        <cstring>textLabel6</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Serial Port:</string>
+                    </property>
+                </widget>
+                <widget class="QComboBox">
+                    <property name="name">
+                        <cstring>SerialPortBox</cstring>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>serialConnectButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Connect</string>
+                    </property>
+                </widget>
+                <spacer>
+                    <property name="name">
+                        <cstring>spacer1</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>170</width>
+                            <height>21</height>
+                        </size>
+                    </property>
+                </spacer>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>NewTabButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Create New Control</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>RemoveTabButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Remove This Control</string>
+                    </property>
+                </widget>
+                <spacer>
+                    <property name="name">
+                        <cstring>spacer1_2</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>119</width>
+                            <height>21</height>
+                        </size>
+                    </property>
+                </spacer>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>StopAllButton</cstring>
+                    </property>
+                    <property name="enabled">
+                        <bool>false</bool>
+                    </property>
+                    <property name="text">
+                        <string>Stop All</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>RefreshTimerButton</cstring>
+                    </property>
+                    <property name="enabled">
+                        <bool>false</bool>
+                    </property>
+                    <property name="text">
+                        <string>Start Refresh Timer</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>botStatusButton</cstring>
+                    </property>
+                    <property name="enabled">
+                        <bool>false</bool>
+                    </property>
+                    <property name="text">
+                        <string>Get Bot Status</string>
+                    </property>
+                </widget>
+            </hbox>
+        </widget>
+        <widget class="QTabWidget" row="1" column="0">
+            <property name="name">
+                <cstring>tabWidget3</cstring>
+            </property>
+            <widget class="QWidget">
+                <property name="name">
+                    <cstring>tab</cstring>
+                </property>
+                <attribute name="title">
+                    <string>Motor Control</string>
+                </attribute>
+                <grid>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QGroupBox" row="0" column="1">
+                        <property name="name">
+                            <cstring>SensorInfoGroup</cstring>
+                        </property>
+                        <property name="sizePolicy">
+                            <sizepolicy>
+                                <hsizetype>0</hsizetype>
+                                <vsizetype>0</vsizetype>
+                                <horstretch>0</horstretch>
+                                <verstretch>0</verstretch>
+                            </sizepolicy>
+                        </property>
+                        <property name="title">
+                            <string>Sensor Info</string>
+                        </property>
+                    </widget>
+                    <widget class="QGroupBox" row="0" column="0">
+                        <property name="name">
+                            <cstring>MotorInfoGroup</cstring>
+                        </property>
+                        <property name="title">
+                            <string>Motor Info</string>
+                        </property>
+                    </widget>
+                </grid>
+            </widget>
+            <widget class="QWidget">
+                <property name="name">
+                    <cstring>tab</cstring>
+                </property>
+                <attribute name="title">
+                    <string>Task Control</string>
+                </attribute>
+                <grid>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QListView" row="2" column="0">
+                        <column>
+                            <property name="text">
+                                <string>Column 1</string>
+                            </property>
+                            <property name="clickable">
+                                <bool>true</bool>
+                            </property>
+                            <property name="resizable">
+                                <bool>true</bool>
+                            </property>
+                        </column>
+                    <item>
+                        <property name="text">
+                            <string>New Item</string>
+                        </property>
+                        <property name="pixmap">
+                            <pixmap></pixmap>
+                        </property>
+                    </item>
+                        <property name="name">
+                            <cstring>TaskListView</cstring>
+                        </property>
+                    </widget>
+                    <widget class="QLayoutWidget" row="1" column="0">
+                        <property name="name">
+                            <cstring>layout36</cstring>
+                        </property>
+                        <hbox>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QLabel">
+                                <property name="name">
+                                    <cstring>textLabel2</cstring>
+                                </property>
+                                <property name="sizePolicy">
+                                    <sizepolicy>
+                                        <hsizetype>0</hsizetype>
+                                        <vsizetype>0</vsizetype>
+                                        <horstretch>0</horstretch>
+                                        <verstretch>0</verstretch>
+                                    </sizepolicy>
+                                </property>
+                                <property name="text">
+                                    <string>Currently Running:</string>
+                                </property>
+                            </widget>
+                            <widget class="QLabel">
+                                <property name="name">
+                                    <cstring>TasksRunningLabel</cstring>
+                                </property>
+                                <property name="sizePolicy">
+                                    <sizepolicy>
+                                        <hsizetype>5</hsizetype>
+                                        <vsizetype>0</vsizetype>
+                                        <horstretch>0</horstretch>
+                                        <verstretch>0</verstretch>
+                                    </sizepolicy>
+                                </property>
+                                <property name="text">
+                                    <string>None</string>
+                                </property>
+                                <property name="alignment">
+                                    <set>AlignVCenter|AlignLeft</set>
+                                </property>
+                            </widget>
+                            <spacer>
+                                <property name="name">
+                                    <cstring>spacer19</cstring>
+                                </property>
+                                <property name="orientation">
+                                    <enum>Horizontal</enum>
+                                </property>
+                                <property name="sizeType">
+                                    <enum>Expanding</enum>
+                                </property>
+                                <property name="sizeHint">
+                                    <size>
+                                        <width>141</width>
+                                        <height>20</height>
+                                    </size>
+                                </property>
+                            </spacer>
+                        </hbox>
+                    </widget>
+                    <widget class="QLayoutWidget" row="0" column="0">
+                        <property name="name">
+                            <cstring>layout10</cstring>
+                        </property>
+                        <hbox>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QLabel">
+                                <property name="name">
+                                    <cstring>StartTaskLabel</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Start Task:</string>
+                                </property>
+                            </widget>
+                            <widget class="QComboBox">
+                                <property name="name">
+                                    <cstring>StartTaskBox</cstring>
+                                </property>
+                                <property name="sizePolicy">
+                                    <sizepolicy>
+                                        <hsizetype>1</hsizetype>
+                                        <vsizetype>0</vsizetype>
+                                        <horstretch>0</horstretch>
+                                        <verstretch>0</verstretch>
+                                    </sizepolicy>
+                                </property>
+                            </widget>
+                            <widget class="QLabel">
+                                <property name="name">
+                                    <cstring>textLabel1</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Parameter:</string>
+                                </property>
+                            </widget>
+                            <widget class="QSpinBox">
+                                <property name="name">
+                                    <cstring>ParameterSpinBox</cstring>
+                                </property>
+                                <property name="enabled">
+                                    <bool>false</bool>
+                                </property>
+                                <property name="maxValue">
+                                    <number>2000000000</number>
+                                </property>
+                                <property name="minValue">
+                                    <number>-2000000000</number>
+                                </property>
+                            </widget>
+                            <widget class="QPushButton">
+                                <property name="name">
+                                    <cstring>StartTaskButton</cstring>
+                                </property>
+                                <property name="enabled">
+                                    <bool>false</bool>
+                                </property>
+                                <property name="text">
+                                    <string>Start</string>
+                                </property>
+                            </widget>
+                            <spacer>
+                                <property name="name">
+                                    <cstring>spacer3</cstring>
+                                </property>
+                                <property name="orientation">
+                                    <enum>Horizontal</enum>
+                                </property>
+                                <property name="sizeType">
+                                    <enum>Expanding</enum>
+                                </property>
+                                <property name="sizeHint">
+                                    <size>
+                                        <width>80</width>
+                                        <height>20</height>
+                                    </size>
+                                </property>
+                            </spacer>
+                            <widget class="QPushButton">
+                                <property name="name">
+                                    <cstring>StopAllTaskButton</cstring>
+                                </property>
+                                <property name="enabled">
+                                    <bool>false</bool>
+                                </property>
+                                <property name="text">
+                                    <string>Stop All</string>
+                                </property>
+                            </widget>
+                            <spacer>
+                                <property name="name">
+                                    <cstring>spacer3_2</cstring>
+                                </property>
+                                <property name="orientation">
+                                    <enum>Horizontal</enum>
+                                </property>
+                                <property name="sizeType">
+                                    <enum>Expanding</enum>
+                                </property>
+                                <property name="sizeHint">
+                                    <size>
+                                        <width>80</width>
+                                        <height>20</height>
+                                    </size>
+                                </property>
+                            </spacer>
+                            <widget class="QLabel">
+                                <property name="name">
+                                    <cstring>textLabel4</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Stop Task:</string>
+                                </property>
+                            </widget>
+                            <widget class="QComboBox">
+                                <property name="name">
+                                    <cstring>StopTaskBox</cstring>
+                                </property>
+                            </widget>
+                            <widget class="QPushButton">
+                                <property name="name">
+                                    <cstring>StopTaskButton</cstring>
+                                </property>
+                                <property name="enabled">
+                                    <bool>false</bool>
+                                </property>
+                                <property name="text">
+                                    <string>Stop</string>
+                                </property>
+                            </widget>
+                        </hbox>
+                    </widget>
+                </grid>
+            </widget>
+        </widget>
+    </grid>
+</widget>
+<connections>
+    <connection>
+        <sender>serialConnectButton</sender>
+        <signal>clicked()</signal>
+        <receiver>MarteControl</receiver>
+        <slot>selectSerialPort()</slot>
+    </connection>
+    <connection>
+        <sender>botStatusButton</sender>
+        <signal>clicked()</signal>
+        <receiver>MarteControl</receiver>
+        <slot>GetStatusPacket()</slot>
+    </connection>
+    <connection>
+        <sender>StopTaskButton</sender>
+        <signal>clicked()</signal>
+        <receiver>MarteControl</receiver>
+        <slot>SendStopTaskCommand()</slot>
+    </connection>
+    <connection>
+        <sender>StartTaskButton</sender>
+        <signal>clicked()</signal>
+        <receiver>MarteControl</receiver>
+        <slot>SendStartTaskCommand()</slot>
+    </connection>
+    <connection>
+        <sender>NewTabButton</sender>
+        <signal>clicked()</signal>
+        <receiver>MarteControl</receiver>
+        <slot>EmitAddTab()</slot>
+    </connection>
+    <connection>
+        <sender>StopAllButton</sender>
+        <signal>clicked()</signal>
+        <receiver>MarteControl</receiver>
+        <slot>SendStopAll()</slot>
+    </connection>
+    <connection>
+        <sender>StopAllTaskButton</sender>
+        <signal>clicked()</signal>
+        <receiver>MarteControl</receiver>
+        <slot>SendStopAll()</slot>
+    </connection>
+    <connection>
+        <sender>RemoveTabButton</sender>
+        <signal>clicked()</signal>
+        <receiver>MarteControl</receiver>
+        <slot>EmitRemoveTab()</slot>
+    </connection>
+</connections>
+<includes>
+    <include location="local" impldecl="in declaration">MotorInfo.h</include>
+    <include location="local" impldecl="in declaration">qtimer.h</include>
+    <include location="local" impldecl="in declaration">qptrvector.h</include>
+    <include location="local" impldecl="in declaration">serialstream.h</include>
+    <include location="local" impldecl="in declaration">martecomm.h</include>
+    <include location="local" impldecl="in declaration">vector</include>
+    <include location="local" impldecl="in declaration">martestringtable.h</include>
+    <include location="local" impldecl="in implementation">TaskDefs.h</include>
+    <include location="local" impldecl="in implementation">fancylistviewitem.h</include>
+    <include location="local" impldecl="in implementation">martecontrol.ui.h</include>
+</includes>
+<variables>
+    <variable>MarteComm drillComm;</variable>
+    <variable>SerialStream serial;</variable>
+    <variable>QPtrVector&lt;MotorInfo&gt; motorInfoArray;</variable>
+    <variable>QTimer refreshTimer;</variable>
+    <variable>bool isBigEndian;</variable>
+    <variable>QPtrList&lt;QLabel&gt; sensorLabelArray;</variable>
+    <variable>QPtrVector&lt;QLabel&gt; analogSensorArray;</variable>
+    <variable>QPtrVector&lt;QLabel&gt; digitalSensorArray;</variable>
+    <variable>MarteStringTable stringTbl;</variable>
+</variables>
+<signals>
+    <signal>RemoveTab()</signal>
+    <signal>AddTab()</signal>
+</signals>
+<slots>
+    <slot>selectSerialPort()</slot>
+    <slot>PortDisconnect()</slot>
+    <slot>GetStatusPacket()</slot>
+    <slot>GetTaskStatusPacket()</slot>
+    <slot>StartRefreshTimer()</slot>
+    <slot>StopRefreshTimer()</slot>
+    <slot>SendStopAll()</slot>
+    <slot>EmitAddTab()</slot>
+    <slot>EmitRemoveTab()</slot>
+    <slot>SendStartTaskCommand()</slot>
+    <slot>SendStopTaskCommand()</slot>
+    <slot>SendSetPositionCommand( int motorNum )</slot>
+    <slot>SendMotorCommand( int motorNum )</slot>
+    <slot>RunHoldMotor( int motorNum )</slot>
+</slots>
+<functions>
+    <function access="private" specifier="non virtual">init()</function>
+    <function access="private" specifier="non virtual">destroy()</function>
+</functions>
+<pixmapinproject/>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

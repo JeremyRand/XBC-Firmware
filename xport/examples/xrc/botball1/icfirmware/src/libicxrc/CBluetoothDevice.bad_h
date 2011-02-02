@@ -1,0 +1,17 @@
+#ifndef BLUETOOTHDEVICE_H
+#define BLUETOOTHDEVICE_H
+
+#include "btqueue.h"
+#include "CCommunicationDevice.h"
+
+class CBluetoothDevice : public CBluetoothQueue, public CCommunicationDevice
+{
+public:
+	CBluetoothDevice();
+	~CBluetoothDevice();
+	virtual void Connect(int msTimeout = 0);
+	virtual int Read(char *inData, unsigned short len, int timeout = 0);
+	virtual int Write(const char *outData, unsigned short len, int timeout = 0);
+};
+
+#endif

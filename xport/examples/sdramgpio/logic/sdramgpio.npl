@@ -1,0 +1,32 @@
+JDF G
+// Created by Project Navigator ver 1.0
+PROJECT sdramgpio
+DESIGN sdramgpio
+DEVFAM spartan2
+DEVFAMTIME 0
+DEVICE xc2s50
+DEVICETIME 0
+DEVPKG pq208
+DEVPKGTIME 0
+DEVSPEED -5
+DEVSPEEDTIME 0
+DEVTOPLEVELMODULETYPE HDL
+TOPLEVELMODULETYPETIME 0
+DEVSYNTHESISTOOL XST (VHDL/Verilog)
+SYNTHESISTOOLTIME 0
+DEVSIMULATOR Other
+SIMULATORTIME 0
+DEVGENERATEDSIMULATIONMODEL Verilog
+GENERATEDSIMULATIONMODELTIME 0
+SOURCE sdramgpio.v
+DEPASSOC SdramGpio ..\..\..\logic\src\xportfast.ucf
+[Normal]
+p_xstVeriIncludeDir=xstvlg, spartan2, Schematic.t_synthesize, 1051047915, ..\..\..\logic\src
+xilxMapCoverMode=xstvlg, spartan2, Implementation.t_placeAndRouteDes, 1064176738, Speed
+xilxNgdbldMacro=xstvlg, spartan2, Implementation.t_placeAndRouteDes, 1051047954, ..\..\..\logic\lib
+xilxNgdbld_AUL=xstvlg, spartan2, Implementation.t_placeAndRouteDes, 1051048040, True
+xilxPAReffortLevel=xstvlg, spartan2, Implementation.t_placeAndRouteDes, 1064176738, Medium
+xilxPARextraEffortLevel=xstvlg, spartan2, Implementation.t_placeAndRouteDes, 1064176738, Continue on Impossible
+_SynthOptEffort=xstvlg, spartan2, Schematic.t_synthesize, 1064176698, High
+[STRATEGY-LIST]
+Normal=True

@@ -1,0 +1,28 @@
+JDF G
+// Created by Project Navigator ver 1.0
+PROJECT primary
+DESIGN primary
+DEVFAM spartan2
+DEVFAMTIME 0
+DEVICE xc2s50
+DEVICETIME 0
+DEVPKG pq208
+DEVPKGTIME 0
+DEVSPEED -5
+DEVSPEEDTIME 0
+DEVTOPLEVELMODULETYPE HDL
+TOPLEVELMODULETYPETIME 0
+DEVSYNTHESISTOOL XST (VHDL/Verilog)
+SYNTHESISTOOLTIME 0
+DEVSIMULATOR Other
+SIMULATORTIME 0
+DEVGENERATEDSIMULATIONMODEL Verilog
+GENERATEDSIMULATIONMODELTIME 0
+SOURCE primaryx.v
+DEPASSOC Primaryx ..\..\logic\src\xport.ucf
+[Normal]
+p_xstVeriIncludeDir=xstvlg, spartan2, Schematic.t_synthesize, 1051069581, ..\..\logic\src
+xilxNgdbldMacro=xstvlg, spartan2, Implementation.t_placeAndRouteDes, 1051069649, ..\..\logic\lib
+xilxNgdbld_AUL=xstvlg, spartan2, Implementation.t_placeAndRouteDes, 1051069625, True
+[STRATEGY-LIST]
+Normal=True

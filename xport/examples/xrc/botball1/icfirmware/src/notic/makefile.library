@@ -1,0 +1,61 @@
+# -*- Makefile -*-
+CC = arm-agb-elf-gcc
+CXX = arm-agb-elf-g++
+LD = arm-agb-elf-ld
+AR = arm-agb-elf-ar
+OBJCOPY  = arm-agb-elf-objcopy
+
+ARCH = -mthumb-interwork
+#LDARCH = -b thumb-interwork
+
+LIBS=$(LDLIBS:-R=)
+#LIBS= ../../lib/libicxbc.a \../../../../../../lib/libxrc-thumb-interwork.a \../../lib/libicxportcommon.a \../../lib/icxview.a \../../../../../../lib/libaxeso-thumb-interwork.a \../../../../../../lib/libgba-thumb-interwork.a \../../../../../../lib/libimage-thumb-interwork.a#LIBS= ../../lib/libicxbc.a ../../lib/libicxportcommon.a ../../../../libxrc/libxrc-thumb-interwork.a ../../../../../../lib/libgba-thumb-interwork.a ../../lib/icxview.a ../../lib/nonpcode.a ../../../../../../lib/libaxeso-thumb-interwork.a 
+LDLIBS= -R ../../lib/libicxbc.a \
+-R ../../../../../../lib/libxrc-thumb-interwork.a \
+-R ../../lib/libicxportcommon.a \
+-R ../../lib/icxview.a \
+-R ../../../../../../lib/libaxeso-thumb-interwork.a \
+-R ../../../../../../lib/libgba-thumb-interwork.a \
+-R ../../../../../../lib/libimage-thumb-interwork.a
+COMPILE=$(wildcard *.cxx)
+OBJECTS=$(COMPILE:.cxx=.o)
+CFLAGS = -O3 $(ARCH) -Wall -D nonpcode
+INCLUDE= -I../../include -I../../../../libxrc -I../../../../../../include -I./
+THISMAKEFILE=-f $(CURDIR)/makefile
+LDFLAGS = $(ARCH) $(LIBS) $(UPLOADLD)
+LDONLY = $(LIBS)
+UPLOADLD = -T ../../../share/upload.ld 
+# -static
+
+# Global support for DEBUG
+ifdef DEBUG
+CFLAGS += -DDEBUG
+endif
+
+install: $(TARGET).bin
+
+$(TARGET).bin: $(TARGET).elf
+	$(OBJCOPY) -v -O binary $(TARGET).elf $(TARGET).bin
+
+$(TARGET).elf: $(OBJECTS)
+	$(CXX) $(OBJECTS) $(LDFLAGS) -o $(TARGET).elf
+#	$(LD) $(OBJECTS) -o $(TARGET).elf $(LDONLY)
+
+
+$(TARGET).a: $(OBJECTS) $(LIBS)
+	-rm $(TARGET).a 
+	$(MAKE) $(TARGET)temp.a 
+	mv $(TARGET)temp.a $(TARGET).a
+
+$(TARGET)temp.a: $(OBJECTS)
+	$(AR) rvs $(TARGET)temp.a $(OBJECTS)
+
+clean:
+#	-rm $(TARGET).a
+	-rm *.o
+	-rm *.a
+	-rm *.bin
+	-rm *.elf
+
+%.o: %.cxx
+	$(CXX) -c $(CFLAGS) $(INCLUDE) $< 

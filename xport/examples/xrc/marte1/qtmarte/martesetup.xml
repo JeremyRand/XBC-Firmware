@@ -1,0 +1,94 @@
+<Marte>
+		<MarteBot Number=0>
+			<Motors>
+				<Motor>
+					<MotorNumber>0</MotorNumber>
+					<MotorName>Test Motor 0</MotorName>
+				</Motor>
+				<Motor>
+					<MotorNumber>1</MotorNumber>
+					<MotorName>Test Motor 1</MotorName>
+				</Motor>
+				<Motor>
+					<MotorNumber>2</MotorNumber>
+					<MotorName>Test Motor 2</MotorName>
+				</Motor>
+				<Motor>
+					<MotorNumber>3</MotorNumber>
+					<MotorName>Test Motor 3</MotorName>
+				</Motor>
+				<Motor>
+					<MotorNumber>4</MotorNumber>
+					<MotorName>Test Motor 4</MotorName>
+				</Motor>
+				<Motor>
+					<MotorNumber>5</MotorNumber>
+					<MotorName>Test Motor 5</MotorName>
+				</Motor>
+				<Motor>
+					<MotorNumber>6</MotorNumber>
+					<MotorName>Test Motor 6</MotorName>
+				</Motor>
+				<Motor>
+					<MotorNumber>7</MotorNumber>
+					<MotorName>Test Motor 7</MotorName>
+				</Motor>
+				<Motor>
+					<MotorNumber>8</MotorNumber>
+					<MotorName>Test Motor 8</MotorName>
+				</Motor>
+				<Motor>
+					<MotorNumber>9</MotorNumber>
+					<MotorName>Test Motor 9</MotorName>
+				</Motor>
+			</Motors>
+			<Tasks>			
+			</Tasks>
+		</MarteBot>
+		<MarteBot Number=1>
+			<Motors>
+				<Motor>
+					<MotorNumber>0</MotorNumber>
+					<MotorName></MotorName>
+				</Motor>
+				<Motor>
+					<MotorNumber>1</MotorNumber>
+					<MotorName></MotorName>
+				</Motor>
+				<Motor>
+					<MotorNumber>2</MotorNumber>
+					<MotorName></MotorName>
+				</Motor>
+				<Motor>
+					<MotorNumber>3</MotorNumber>
+					<MotorName></MotorName>
+				</Motor>
+				<Motor>
+					<MotorNumber>4</MotorNumber>
+					<MotorName></MotorName>
+				</Motor>
+				<Motor>
+					<MotorNumber>5</MotorNumber>
+					<MotorName></MotorName>
+				</Motor>
+				<Motor>
+					<MotorNumber>6</MotorNumber>
+					<MotorName></MotorName>
+				</Motor>
+				<Motor>
+					<MotorNumber>7</MotorNumber>
+					<MotorName></MotorName>
+				</Motor>
+				<Motor>
+					<MotorNumber>8</MotorNumber>
+					<MotorName></MotorName>
+				</Motor>
+				<Motor>
+					<MotorNumber>9</MotorNumber>
+					<MotorName></MotorName>
+				</Motor>
+			</Motors>
+			<Tasks>
+			</Tasks>
+		</MarteBot>
+</Marte>

@@ -1,0 +1,33 @@
+JDF G
+// Created by Project Navigator ver 1.0
+PROJECT robot1150
+DESIGN robot1150
+DEVFAM spartan2
+DEVFAMTIME 0
+DEVICE xc2s150
+DEVICETIME 1087418169
+DEVPKG pq208
+DEVPKGTIME 0
+DEVSPEED -5
+DEVSPEEDTIME 0
+DEVTOPLEVELMODULETYPE HDL
+TOPLEVELMODULETYPETIME 0
+DEVSYNTHESISTOOL XST (VHDL/Verilog)
+SYNTHESISTOOLTIME 0
+DEVSIMULATOR Other
+SIMULATORTIME 0
+DEVGENERATEDSIMULATIONMODEL Verilog
+GENERATEDSIMULATIONMODELTIME 0
+SOURCE robot1.v
+DEPASSOC Robot1 robot1.ucf
+[Normal]
+p_xstVeriIncludeDir=xstvlg, spartan2, Verilog.t_synthesize, 1087418277, ../../../../logic/src
+xilxNgdbldMacro=xstvlg, spartan2, Verilog.t_placeAndRouteDes, 1087418317, ../../../../logic/lib
+xilxNgdbld_AUL=xstvlg, spartan2, Verilog.t_placeAndRouteDes, 1087418317, True
+xilxPAReffortLevel=xstvlg, spartan2, Verilog.t_placeAndRouteDes, 1087418317, High
+_SynthOptEffort=xstvlg, spartan2, Verilog.t_synthesize, 1087418277, High
+[STATUS-ALL]
+Robot1.ngcFile=WARNINGS,1088456467
+Robot1.ngdFile=WARNINGS,1088456476
+[STRATEGY-LIST]
+Normal=True

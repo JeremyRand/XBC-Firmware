@@ -1,0 +1,92 @@
+/* 
+
+Extra Motor Code
+Author: Jeremy Rand
+Description: Allows running motors off the digital sensor ports.  Thanks to Fahrzin Hemmati for the idea.
+
+This code is protected by copyright law and international treaties.  Licensed exclusively to Norman North High School
+and La Jolla High School.  Any unauthorized use or distribution of this code is strictly prohibited.  All rights 
+reserved.
+
+Change Log
+
+2007 Apr 07
+Renamed a function, added some comments.
+
+2007 Apr 05
+Added support for Channel B and Bidirectional connections.
+
+2007 Apr 04
+Initial Release
+
+*/
+
+#define CHANNEL_A 0
+#define CHANNEL_B 8
+
+void extra_motor(int port, int channel, int power)
+{
+    // Motor wires are plugged vertically.
+    // Power 0 = off, 1 = slow, 2 = full speed.
+    // Full speed = 3.3V with default jumper settings.
+    // Motor ports are 5V.
+    // So extra_motor() power 2 is equivalent to setpwm() power 66, or motor() power 33.
+    // And remember: extra_motor() does NOT support backwards motion, PWM, or BackEMF.
+    
+    port += channel;
+    
+    if(power==0)
+      {
+        if(port < 16)
+          {
+            enable_encoder(port);
+            disable_encoder(port);
+        }
+        else
+          {
+            enable_extra_encoder(port);
+            disable_extra_encoder(port);
+        }
+    }
+    else if(power==1)
+      {
+        set_digital_output_value(port, 1);
+    }
+    else if(power==2)
+      {
+        set_digital_output_value(port, 0);
+    }
+}
+
+void extra_motor_bidir(int port, int channel, int power)
+{
+    // Motor wires are plugged (horizontally) into the port's IO wire and the IO wire of port+2.
+    // Power 0 = off, 1 = forward, -1 = backward.
+    // And remember: extra_motor_bidir() does NOT support PWM or BackEMF.
+    
+    if(power > 0)
+      {
+        extra_motor(port, channel, 1);
+        extra_motor(port+2, channel, 2);
+    }
+    else if(power < 0)
+      {
+        extra_motor(port, channel, 2);
+        extra_motor(port+2, channel, 1);
+    }
+    else if(power == 0)
+      {
+        extra_motor(port, channel, 0);
+        extra_motor(port+2, channel, 0);
+    }
+}
+
+void extra_alloff()
+{
+    int counter;
+    
+    for(counter=8; counter<=23; counter++)
+      {
+        extra_motor(counter, CHANNEL_A, 0);
+    }
+}

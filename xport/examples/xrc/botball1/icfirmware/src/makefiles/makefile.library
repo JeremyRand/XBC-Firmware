@@ -1,0 +1,49 @@
+# -*- Makefile -*-
+CC = arm-agb-elf-gcc
+CXX = arm-agb-elf-g++
+AR = arm-agb-elf-ar
+OBJCOPY  = arm-agb-elf-objcopy
+
+ARCH = -mthumb-interwork
+
+COMPILE=$(wildcard *.cxx)
+OBJECTS=$(COMPILE:.cxx=.o)
+CFLAGS = -O2 $(ARCH) -Wall -I../../include 
+INCLUDE=-I ../../include -I./ -I../../../../libxrc -I../../../../../../include
+THISMAKEFILE=-f $(CURDIR)/makefile
+
+# Global support for USE_SIM
+ifdef USE_SIM
+CFLAGS += -DUSE_SIM
+OBJECTS=$(COMPILE:.cxx=-sim.o)
+endif
+
+# Global support for DEBUG
+ifdef DEBUG
+CFLAGS += -DDEBUG
+endif
+
+install: $(TARGET).a 
+	cp $(TARGET).a ../../lib
+	cp *.h ../../include/$(INCLUDESUB)
+
+$(TARGET).a: $(OBJECTS)
+	-rm ../../lib/$(TARGET).a 
+	$(MAKE) $(TARGET)temp.a 
+	mv $(TARGET)temp.a $(TARGET).a
+
+$(TARGET)temp.a: $(OBJECTS)
+	$(AR) rvs $(TARGET)temp.a $(OBJECTS)
+
+clean:
+	-rm ../../lib/$(TARGET).a
+	-rm *.o
+	-rm *.a
+
+ifdef USE_SIM
+%-sim.o: %.cxx
+	$(CXX) -c $(CFLAGS) -o $@ $(INCLUDE) $< 
+else
+%.o: %.cxx
+	$(CXX) -c $(CFLAGS) $(INCLUDE) $< 
+endif

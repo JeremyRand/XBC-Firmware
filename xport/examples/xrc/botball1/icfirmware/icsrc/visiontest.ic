@@ -1,0 +1,30 @@
+#use "xbccamlib.ic"
+
+void main()
+{
+    int i, ch,n; 
+    long fnum;
+    
+    init_camera();
+    track_enable_orientation();
+    while(1) {
+        track_update();
+        fnum = track_get_frame();
+        printf("Track %l:\n", fnum);
+        for(ch=0; ch<3; ch++) {
+            n=track_count(ch);
+            printf(" Ch %d: %d blobs\n", ch, n);
+            for(i=0; i<n; i++) {
+                printf("  %d: area %d, (%d, %d), conf %d\n", 
+                       i, track_size(ch, i), 
+                       track_x(ch, i), track_y(ch, i), 
+                       track_confidence(ch, i));
+                printf("    angle %f, maj %f, min %f\n", 
+                       track_angle(ch, i), 
+                       track_major_axis(ch, i),
+                       track_minor_axis(ch, i));
+            }
+        }
+        sleep(5.0);
+    }
+}

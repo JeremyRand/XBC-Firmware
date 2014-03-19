@@ -1,5 +1,5 @@
-XBC-Firmware
-============
+XBC Firmware Student Edition
+============================
 
 Xport Botball Controller Custom Firmware
 
